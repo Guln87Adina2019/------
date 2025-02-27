@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дәрілерді іздеу</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: #f1f1f1;
+            border-radius: 20px;
+            padding: 5px;
+            width: 300px;
+        }
+        .search-input {
+            border: none;
+            outline: none;
+            background: transparent;
+            flex: 1;
+            padding: 8px;
+        }
+        .search-button {
+            background: #a3d065;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" class="search-input" id="search" placeholder="Дәрілер мен тауарларды іздеу">
+        <button class="search-button" onclick="searchMedicine()">Іздеу</button>
+    </div>
+
+    <ul id="results"></ul>
+
+    <script>
+        const medicines = ["Парацетамол", "Ибупрофен", "Цитрамон", "Анальгин", "Аспирин"];
+        
+        function searchMedicine() {
+            let query = document.getElementById("search").value.toLowerCase();
+            let results = medicines.filter(med => med.toLowerCase().includes(query));
+            
+            let resultsList = document.getElementById("results");
+            resultsList.innerHTML = "";
+            
+            results.forEach(med => {
+                let li = document.createElement("li");
+                li.textContent = med;
+                resultsList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

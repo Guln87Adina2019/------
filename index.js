@@ -124,6 +124,20 @@ let promotional = [
     },
 ]
 
+
+// function searchMedicine() {
+//     let query = document.getElementById("search").value.toLowerCase();
+//     let results = medicines.filter(med => med.toLowerCase().includes(query));
+    
+//     let resultsList = document.getElementById("results");
+//     resultsList.innerHTML = "";
+    
+//     results.forEach(med => {
+//         let li = document.createElement("li");
+//         li.textContent = med;
+//         resultsList.appendChild(li);
+//     });
+// }
 function createDiscountCard(i) {
     const discountCard = document.createElement("div");
     discountCard.className = "dicount-card";
